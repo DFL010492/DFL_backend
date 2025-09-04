@@ -1,5 +1,5 @@
 function calcularMediaAluno(a1, a2, a3) {
-    
+
     if (a1 === undefined || a2 === undefined) {
         throw new Error("a1 e a2 são obrigatórios ou não informados");
     }
@@ -14,18 +14,12 @@ function calcularMediaAluno(a1, a2, a3) {
         return (a1 * 0.4) + (a2 * 0.6);
     }
 
-    const max1 = Math.max(a1, a2, a3);
-    let max2;
+    const mediaA1A2 = (a1* 0.4)+ (a2 * 0.6);
+    const mediaA1A3 = (a1* 0.4)+ (a3 * 0.6); 
+    const mediaA2A3 = (a2* 0.4)+ (a3 * 0.6);
+    const melhorMedia = Math.max(mediaA1A2, mediaA1A3, mediaA2A3); 
 
-    if (max1 === a1) {
-        max2 = Math.max(a2, a3);
-    } else if (max1 === a2) {
-        max2 = Math.max(a1, a3);
-    } else {
-        max2 = Math.max(a1, a2);
-    }
-
-    return (max1 + max2) / 2;
+    return melhorMedia;
 }
 
 module.exports = {

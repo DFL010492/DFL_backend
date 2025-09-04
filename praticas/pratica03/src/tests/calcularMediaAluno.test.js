@@ -17,15 +17,14 @@ describe("Calcular Media", () => {
         expect(() => MediaAluno.calcularMediaAluno(8, 6, -5)).toThrow('Nota a3 não pode ser negativa');
     });
     test('Quando a3 é informada e a melhor combinação é a1 com a3', () => {
-        const resultado = MediaAluno.calcularMediaAluno(9, 5, 8); // melhores: 9 e 8
-        expect(resultado).toBeCloseTo(8.5, 1);
+        expect(MediaAluno.calcularMediaAluno(4 ,9 ,7)).toBeCloseTo(7.8);
     });
     
     test('Quando a3 é informada e a melhor combinação é a1 com a3', () => {
-        expect(MediaAluno.calcularMediaAluno(5 ,9 ,8)).toBeCloseTo(8.5);
+        expect(MediaAluno.calcularMediaAluno(5 ,9 ,8)).toBeCloseTo(8.4);
     });
     test('Quando a3 é informada e a melhor combinação é a2 com a3', () => {
-        expect(MediaAluno.calcularMediaAluno(7 ,4 ,8)).toBeCloseTo(7.5);
+        expect(MediaAluno.calcularMediaAluno(7 ,4 ,8)).toBeCloseTo(7.6);
     });
 
 })

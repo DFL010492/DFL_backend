@@ -1,0 +1,14 @@
+const express = require("express");
+const router = express.Router();
+
+// Importar controller
+const tarefaController = require("../controllers/tarefaController");
+
+// Rotas
+router.get("/", tarefaController.listar);
+router.get("/:tarefaId", tarefaController.buscarPeloId);
+router.post("/", tarefaController.criar);
+router.put("/:tarefaId", tarefaController.atualizar);
+router.delete("/:tarefaId", tarefaController.remover);
+
+module.exports = router;

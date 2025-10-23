@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
-    nome: String,
+    nome: { type: String, 
+        required: [true, 'Nome da Tarefa é obrigatorio'], 
+        trim: true,  
+        minLength : [3, 'Nome da Tarefa deve ter pelo menos 3 caracteres'] },
     concluida: Boolean
 });
 
